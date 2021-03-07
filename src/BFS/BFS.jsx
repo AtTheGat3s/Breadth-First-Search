@@ -1,10 +1,10 @@
-import React, { useEffect , useState } from 'react'
+import React, { useEffect , useState, useRef } from 'react'
 import './BFS.css'
 
 function BFS(props) {    
     const [canvasSize, setCanvasSize] = useState({canvasWidth: 800, canvasHeight: 600})
     const [hexSize, setHexSize] = useState(20)
-    const canvasHex = {}
+    let canvasHex
 
     useEffect(() => {
         const { canvasWidth, canvasHeight } = canvasSize
@@ -45,7 +45,7 @@ function BFS(props) {
 
     return(
         <div className="BFS">
-            <canvas></canvas>
+            <canvas ref={ cHex => canvasHex = cHex}></canvas>
         </div>
     )
 }
