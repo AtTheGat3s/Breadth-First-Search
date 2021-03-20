@@ -59,6 +59,7 @@ const BFS = React.memo(function BFS(props) {
         const ctx = canvasView.getContext("2d")
         ctx.clearRect(0, 0, canvasWidth, canvasHeight)
         for( let l in cameFrom) {
+
           const { q, r, s } = JSON.parse(l)
           const { x, y } = hexToPixel(hex(q, r))
           drawHex(canvasView, point(x, y), 1, "black", "grey", 0.1)
